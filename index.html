@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نتائج امتحانات الفصل الدراسي الأول</title>
+
+  <style>
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background-color: #f5f6f7;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background: white;
+      padding: 50px 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    .login-container h1 {
+      color: #c62828;
+      margin: 0 0 30px 0;
+      font-size: 26px;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 14px;
+      font-size: 17px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+      margin-bottom: 25px;
+      text-align: center;
+      font-family: monospace;
+      letter-spacing: 1px;
+      direction: ltr;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 14px;
+      background: #2a73f5;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-container button:hover {
+      background: #1e58bd;
+    }
+
+    /* ────────────────────────────────────────────── */
+    /* باقي الأنماط الأصلية لصفحة النتيجة (من غير تغيير) */
+    /* ────────────────────────────────────────────── */
+
+    .result-container {
+      display: none;
+      padding: 20px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      text-align: center;
+      color: red;
+      margin-bottom: 25px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    table th, table td {
+      border: 1px solid #e5e5e5;
+      padding: 10px;
+      text-align: center;
+    }
+
+    table th {
+      background-color: #f0f0f0;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    .section-title {
+      background-color: #f7f7f7;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .total {
+      font-weight: bold;
+      background-color: #f3f3f3;
+    }
+
+    .bottom-actions {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    .bottom-actions button,
+    .bottom-actions a {
+      width: 220px;
+      padding: 12px 0;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .print-btn {
+      background-color: #2a73f5;
+      color: #fff;
+      border: none;
+    }
+
+    .home-btn {
+      background-color: #2a73f5;
+      color: #fff;
+      border: 2px dashed #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media print {
+      .bottom-actions,
+      .login-container {
+        display: none !important;
+      }
+      .result-container {
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- صفحة تسجيل الدخول فقط -->
+  <div class="login-container" id="loginPage">
+    <h1>نتائج امتحانات الفصل الدراسي الأول الصف الاول الثانوي</h1>
+    <p style="margin: -10px 0 30px; color: #555;">2025 / 2026 م</p>
+    
+    <input type="text" id="nationalId" placeholder="أدخل الرقم القومي" maxlength="14">
+    
+    <button onclick="showResult()">عرض النتيجة</button>
+  </div>
+
+  <!-- صفحة النتيجة (نفس الكود الأصلي اللي بعته) -->
+  <div class="result-container" id="resultPage">
+
+    <div class="container">
+      <h1>نتائج امتحانات الفصل الدراسي الأول 2025 / 2026م</h1>
+      
+      <table>
+        <tr>
+          <th>الصف الأول الثانوي</th>
+          <th>نتيجة الطالب</th>
+        </tr>
+
+        <tr class="section-title">
+          <td colspan="2">بيانات الطالب</td>
+        </tr>
+
+        <tr>
+          <td>الرقم القومي</td>
+          <td>30905032301379</td>
+        </tr>
+
+        <tr>
+          <td>اسم الطالب</td>
+          <td>معاذ ممدوح السيد علي ابراهيم</td>
+        </tr>
+
+        <tr>
+          <td>رقم الجلوس</td>
+          <td>168</td>
+        </tr>
+
+        <tr>
+          <td>المدرسة</td>
+          <td>مدرسة البنات خدمات</td>
+        </tr>
+
+        <tr class="section-title">
+          <td colspan="2">مواد أساسية تضاف للمجموع</td>
+        </tr>
+
+        <tr><td>اللغة العربية / 100</td><td>95.5</td></tr>
+        <tr><td>اللغة الإنجليزية / 100</td><td>85.5</td></tr>
+        <tr><td>الرياضيات / 100</td><td>88</td></tr>
+        <tr><td>العلوم المتكاملة / 100</td><td>85</td></tr>
+        <tr><td>التاريخ / 100</td><td>85</td></tr>
+        <tr><td>الفلسفة والمنطق / 100</td><td>88</td></tr>
+
+        <tr class="section-title">
+          <td colspan="2">المجموع الكلي للطالب</td>
+        </tr>
+
+        <tr class="total">
+          <td>المجموع الكلي / 600</td>
+          <td>527</td>
+        </tr>
+
+        <tr class="section-title">
+          <td colspan="2">مواد لا تضاف للمجموع</td>
+        </tr>
+
+        <tr><td>التربية الدينية / 100</td><td>77</td></tr>
+        <tr><td>اللغة الفرنسية / 100</td><td>66</td></tr>
+        <tr><td>البرمجة والذكاء الاصطناعي / 100</td><td>76</td></tr>
+      </table>
+    </div>
+
+    <div class="bottom-actions">
+      <button class="print-btn" onclick="window.print()">طباعة النتيجة</button>
+      <a href="javascript:void(0)" class="home-btn" onclick="backToLogin()">الرئيسية</a>
+    </div>
+
+  </div>
+
+  <script>
+    function showResult() {
+      document.getElementById("loginPage").style.display = "none";
+      document.getElementById("resultPage").style.display = "block";
+    }
+
+    function backToLogin() {
+      document.getElementById("resultPage").style.display = "none";
+      document.getElementById("loginPage").style.display = "flex";
+      document.getElementById("nationalId").value = "";
+    }
+  </script>
+
+</body>
+</html>
